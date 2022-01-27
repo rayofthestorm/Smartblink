@@ -85,7 +85,7 @@
     <number>1</number>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="BlinkLable">
    <property name="geometry">
     <rect>
      <x>300</x>
@@ -127,7 +127,7 @@
   <connection>
    <sender>speedSlider</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>label</receiver>
+   <receiver>BlinkLable</receiver>
    <slot>setNum(int)</slot>
    <hints>
     <hint type="sourcelabel">
