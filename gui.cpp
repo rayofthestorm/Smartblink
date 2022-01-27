@@ -41,11 +41,10 @@ void Gui::toggle()
     if(auswahl == 1)    //Laufliht
     {
         m_leds->set(zaehler);
+
           if(zaehler < 8)
            zaehler = zaehler * 2;
            else
            zaehler = 1;
-
-
     }
 }
