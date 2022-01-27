@@ -1,9 +1,11 @@
 #ifndef GUI_H
 #define GUI_H
-
+#include <QWidget>
 #include "ui_gui.h"
 #include "gpio.h"
 #include <QTimer>
+
+const int TIMEOUT = 1000;
 
 class Gui : public QWidget, private Ui::Gui
 {
@@ -11,19 +13,18 @@ class Gui : public QWidget, private Ui::Gui
 
 public:
     explicit Gui(QWidget *parent = nullptr);
+
 private slots:
     void on_speedSlider_valueChanged(int value);
     void on_blinkButton_clicked();
     void on_lauflichtButton_clicked();
     void toggle();
-
-    void on_BlinkLable_linkActivated(const QString &link);
-
 private:
     QTimer* m_timer;
-    bool m_status;
+    bool m_state = 0;
+    bool auswahl = 0;
+    unsigned int zaehler = 1;
     Gpio* m_leds;
-
 };
 
 #endif // GUI_H
